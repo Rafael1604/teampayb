@@ -6,7 +6,7 @@
     <title>Team Payb Websites</title>
     <link rel="stylesheet" href="style.css">
     <style>
-       
+        /* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +17,7 @@ body{
     color: #e5e5e5;
 }
 
-
+/* Loading Screen */
 #loading-screen {
     display: flex;
     justify-content: center;
@@ -39,20 +39,21 @@ body{
     to { opacity: 0; visibility: hidden; }
 }
 
-
+/* Centering Logo and Links */
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
-    background-color: #2d2d34; 
+    background-color: #2d2d34; /* Background color can be adjusted as needed */
 }
 
 /* Logo Styling */
 .header-left img {
     width: 120px;
     height: auto;
-
+    border: 3px solid #5e5e5e; /* Subtle border to add visual focus */
+    border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     margin-bottom: 15px; /* Space between logo and links */
     transition: transform 0.3s ease; /* Smooth hover effect */
@@ -62,8 +63,8 @@ header {
 .header-links {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 20px; /* Space between links */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 .header-links a {
