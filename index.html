@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website with Enhanced Layout</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #1a1a1d;
+    color: #e5e5e5;
+}
+
+/* Loading Screen */
+#loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #291063;
+    color: #fff;
+    font-size: 2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    z-index: 1000;
+    animation: fadeOut 1s ease-in-out 3s forwards;
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+}
+
+/* Centering Logo and Links */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #2d2d34; /* Background color can be adjusted as needed */
+}
+
+/* Logo Styling */
+.header-left img {
+    width: 120px;
+    height: auto;
+    border: 3px solid #5e5e5e; /* Subtle border to add visual focus */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px; /* Space between logo and links */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Navigation Links Styling */
+.header-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between links */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.header-links a {
+    color: #e0bbf2; /* Aesthetic color for premium look */
+    font-family: 'Comic Sans MS', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-shadow: 0 0 5px rgba(128, 128, 128, 0.8);
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.header-links a:hover {
+    color: #c0a3e1;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-left img {
+        width: 90px; /* Reduce logo size on mobile */
+    }
+    .header-links a {
+        font-size: 1em; /* Adjust link size for mobile */
+    }
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Sections with image and text */
+.content-section {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Light background for separation */
+    border-radius: 8px;
+}
+.content-section .text-box {
+    flex: 1;
+    background-color: #36393f;
+    padding: 20px;
+    border-radius: 8px;
+}
+.content-section img {
+    flex: 1;
+    max-width: 100%;
+    border-radius: 10px;
+    /*
+    border: 3px solid #454446;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); */
+}
+
+/* Alternate layout */
+.content-section.alt {
+    flex-direction: row-reverse;
+}
+
+h2:hover {
+    color: #c0a3e1; /* Aesthetic color for hover */
+    transition: color 0.3s;
+}
+.header-links a:hover,
+.content-section a:hover {
+    color: #c0a3e1; /* Match hover color for aesthetic consistency */
+    text-decoration: underline;
+}
+
+
+
+
+
+/* Members Section Modal */
+.members-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    text-align: center;
+    color: #fff;
+    z-index: 1001;
+}
+.members-modal img {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(85, 82, 82, 0.8);
+}
+.members-close {
+    display: block;
+    color: #fff;
+    font-size: 1.5em;
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Members Button */
+.members-button {
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: rgba(128, 128, 128, 0.3);
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    text-shadow: 0 0 5px rgba(128, 128, 128, 0.8);
+    cursor: pointer;
+    text-align: center;
+    margin: 0 auto;
+    
+}
+span{
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #2d2d34;
+    color: #fff;
+    font-size: 0.9em;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .header-right {
+        margin-left: 0;
+        align-items: center;
+    }
+    .content-section .text-box, .content-section img {
+        flex: 100%;
+    }
+}
+
+        
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div i="loading-screen">Welcome to our website</div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <img src="img/icctlogo.png" alt="Logo Image">
+        </div>
+        <div class="header-right">
+            
+            <div class="header-links">
+                <a href="#music">MUSIC</a>
+                <a href="#movies">MOVIES</a>
+                <a href="#celebrity">CELEBRITY</a>
+                <a href="#games">GAMES</a>
+                <a href="#members">MEMBERS</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Four Content Sections with Alternating Layout -->
+        <section class="content-section">
+            <div class="text-box"><h2 id="music">MUSIC</h2><p>
+                This website contains information about music streaming options and provides links to various popular music platforms. Additionally, it shares a personal perspective on the importance of music, describing music as a source of inspiration and connection. </p></div>
+            <a href="https://rafael1604.github.io/music/index.html"><img src="https://i.pinimg.com/736x/0a/b5/b1/0ab5b1772bef52c42da7a2c151fa26d5.jpg" alt="Image 1"></a>
+        </section>
+
+        <section class="content-section">
+            <div class="text-box"><h2 id="movies">MOVIES</h2><p>This website contains information about the Marvel Cinematic Universe (MCU), providing fans with a rich overview of Marvel’s characters, history, and cosmic hierarchy. It serves as an interactive space where visitors can delve into the world of their favorite Marvel superheroes, learn about the origins and development of Marvel Comics, and explore the complex hierarchy of powerful entities within the Marvel Universe.</p></div>
+            <a href="https://rafael1604.github.io/marvel/index.html"><img src="https://i.pinimg.com/736x/9c/54/f6/9c54f612964723b5eada96d96c296d1f.jpg" alt="Image 2"></a>
+        </section>
+
+        <section class="content-section">
+            <div class="text-box"><h2 id="celebrity">CELEBRITY</h2><p>This website contains detailed information about the Filipino P-Pop group BINI, highlighting each member and their unique talents. It serves as a fan resource and a tribute to the group, offering insights into their music, personalities, and career achievements.</p></div>
+            <a href="https://rafael1604.github.io/bini/index.html"><img src="https://i.pinimg.com/736x/a0/cf/d2/a0cfd2d64f62f8850c7f55d142f8f630.jpg" alt="Image 3"></a>
+        </section>
+
+        <section class="content-section">
+            <div class="text-box"><h2 id="games">GAMES</h2><p>This website contains information about the gaming interests of Jaedie Penalosa and Alfred Padua, showcasing their favorite games and providing resources for other popular online games. It serves as a community space where visitors can explore trending games, stay updated on the latest releases, and connect with Jaedie and Alfred for collaborations or discussions about shared gaming interests.</p></div>
+            <a href="https://rafael1604.github.io/games/index.html"><img src="https://i.pinimg.com/736x/03/ec/d4/03ecd433b3bbac25203a69b179de78a8.jpg" alt="Image 4"></a>
+        </section>
+
+
+        <!-- Members Section Button -->
+        <div class="members-button" onclick="toggleMembers()">MEMBERS</div>
+    </main>
+
+    <!-- Members Modal -->
+    <div class="members-modal" id="membersModal">
+        
+        <div>
+            <h2>Members</h2>
+            <a href="https://rafael1604.github.io/music/index.html"><img src="img/maranan.png" alt="Member 1"></a>
+            <a href="https://rafael1604.github.io/marvel/index.html"><img src="img/oriarte.png" alt="Member 2"></a>
+            <a href="https://rafael1604.github.io/games/index.html"><img src="img/padua.png" alt="Member 3"></a>
+            <a href="https://rafael1604.github.io/bini/index.html"><img src="img/pagsangjan.png" alt="Member 4"></a>
+            <a href="https://rafael1604.github.io/games/index.html"><img src="img/penalosa.png" alt="Member 5"></a>
+            
+        </div>
+        
+        <span class="members-close" onclick="toggleMembers()">X</span>
+    </div>
+
+    <!-- Footer -->
+    <footer id="members">
+        &copy; Team Payb All rights reserved
+    </footer>
+
+    <!-- JavaScript for Loading Screen and Members Modal -->
+    <script>
+        window.addEventListener('load', () => {
+            const loadingScreen = document.getElementById('loading-screen');
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 5000);
+        });
+
+        function toggleMembers() {
+            const modal = document.getElementById('membersModal');
+            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</body>
+</html>
